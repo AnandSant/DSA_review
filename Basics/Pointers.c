@@ -12,6 +12,11 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+struct Rectangle{
+    int x;
+    int y;
+};
+
 int main(){
     int a = 10;
     // #1 Declaring a pointer and initializing it
@@ -31,6 +36,19 @@ int main(){
     for(int i = 0 ; i<5 ; i++){
         printf("%d\n",q[i]);   
     }
+    int *p1;
+    char *p2;
+    float *p3;
+    double *p4;
+    struct Rectangle *p5;
+    
+    printf("\n size of p1 = %lu",sizeof(p1));
+    printf("\n size of p2 = %lu",sizeof(p2));
+    printf("\n size of p3 = %lu",sizeof(p3));
+    printf("\n size of p4 = %lu",sizeof(p4));
+    printf("\n size of p5 = %lu",sizeof(p5));
+ 
     free(q);
     return 0;
 }
+}      
