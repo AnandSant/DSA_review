@@ -37,3 +37,12 @@ int main()
     
     return 0;
 }
+
+/* Padding in Structure (related to memory)
+struct Rectangle{
+    int length;
+    int breadth;
+    char x;
+};
+the above code will allocate 4 byest + 4 byes + 4 bytes(not 1 bytes for character) as in structure padding is done 
+*/
