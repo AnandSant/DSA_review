@@ -36,6 +36,9 @@ int main(){
     for(int i = 0 ; i<5 ; i++){
         printf("%d\n",q[i]);   
     }
+    
+       
+    //#5 Size of pointer is independent of data type check the output of the code   
     int *p1;
     char *p2;
     float *p3;
@@ -47,8 +50,26 @@ int main(){
     printf("\n size of p3 = %lu",sizeof(p3));
     printf("\n size of p4 = %lu",sizeof(p4));
     printf("\n size of p5 = %lu",sizeof(p5));
- 
+
+    /#6 Always free or delete the memory you have used, it is a good practice , although the system clears the memory once the program execution completes
     free(q);
     return 0;
 }
 }      
+
+/*Output::
+10
+10
+20
+30
+40
+50
+
+ size of p1 = 8
+ size of p2 = 8
+ size of p3 = 8
+ size of p4 = 8
+ size of p5 = 8
+
+
+*/
