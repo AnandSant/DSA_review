@@ -1,0 +1,24 @@
+/*
+Call by address Functions 
+*/
+#include <stdio.h>
+
+void swap(int *y, int *z){
+    int temp;
+    temp = *y;
+    *y = *z; 
+    *z = temp;
+    printf("y and z are = %d %d \n", *y, *z);
+}
+
+int main()
+{
+    printf("Will call by value swaps : ");
+    int a, b;
+    a = 10;
+    b = 20;
+    printf("Values before call %d %d \n", a, b);
+    swap(&a, &b);
+    printf("Values after swap %d %d \n",a, b);
+    return 0;
+}
