@@ -1,0 +1,30 @@
+/*
+Functions are Piece of code that performs a specific Task, 
+Uses: 
+Maintainability : can create manageable tasks
+Reusability     : 
+Library         : 
+
+Functions will have its own activation record & are created and destroyed when called and call ends
+
+*/
+#include <stdio.h>
+int swap(int y, int z){
+    int temp;
+    temp = y;
+    y = z; 
+    z = temp;
+    printf("y and z are = %d %d \n", y, z);
+}
+
+int main()
+{
+    printf("Will call by value swaps : ");
+    int a, b;
+    a = 10;
+    b = 20;
+    printf("Values before call %d %d \n", a, b);
+    swap(a,b);
+    printf("Values after swap %d %d \n",a, b);
+    return 0;
+}
