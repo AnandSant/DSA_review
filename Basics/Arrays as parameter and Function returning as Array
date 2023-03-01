@@ -1,0 +1,56 @@
+/*
+//Arrays as parameter
+#include <stdio.h>
+#include <stdlib.h>
+
+void printArray(int A[], int size){
+    for(int i=0; i<size; i++){
+        printf("\n %d",A[i]);
+    }   
+}
+
+int main()
+{
+    printf("Hello World");
+    int size = 5;
+    int a[5]={1,2,3,4,5};
+    printArray(a, size);
+}
+*/
+
+// Returning Array as parameter
+#include <stdio.h>
+#include <stdlib.h>
+
+void printArray(int A[], int size){
+    for(int i=0; i<size; i++){
+        printf("%d",A[i]);
+    }    
+}
+
+int * returnArray(int size){
+    int *p;
+    p = (int *) malloc(size * sizeof(int));
+    
+    for(int i=0; i<size; i++){
+        p[i]= i+1;
+    }
+    
+    return p;
+}
+int main()
+{
+    printf("Hello World");
+    int size = 5;
+    int a[5]={1,2,3,4,5};
+    printArray(a, size);
+    // Returning Array as parameter
+    int *newArray;
+    
+    newArray = returnArray(size);
+    
+    for(int i=0; i<size; i++){
+        printf("%d %d \n",i, newArray[i]);
+    }
+    return 0;
+}
