@@ -1,0 +1,109 @@
+/*#include <stdio.h>
+
+struct Rectangle {
+    int length;
+    int width;
+};
+
+int calculateArea(struct Rectangle r){
+  return r.length * r.width;  
+}
+
+int main()
+{
+    struct Rectangle r1 = {10,5};
+    printf("%d area is ", calculateArea(r1));
+    return 0;
+}*/
+
+//structures Call by Value of passing structures
+
+/*#include <stdio.h>
+struct Rectangle {
+    int length;
+    int width;
+};
+
+int calculateArea(struct Rectangle r){
+  r.length++;
+  printf("length and width inside Rectangle %d %d \n", r.length, r.width);
+  return r.length * r.width;  
+}
+
+int main()
+{
+    struct Rectangle r1 = {10,5};
+    printf("area is %d ", calculateArea(r1));
+    printf("\n length and width inside Rectangle %d  %d", r1.length, r1.width);
+    return 0;
+}*/
+
+// structures Call by Reference
+/*#include<stdio.h>
+struct Rectangle {
+    int length;
+    int width;
+};
+
+int calculateArea(struct Rectangle *r){
+  r->length++;
+  printf("length and width inside Rectangle %d %d \n", r->length, r->width);
+  return r->length * r->width;  
+}
+
+int main()
+{
+    struct Rectangle r1 = {10,5};
+    printf("area is %d ", calculateArea(&r1));
+    printf("\n length and width inside Rectangle %d  %d", r1.length, r1.width);
+    return 0;
+}*/
+
+
+// YES we can send Array of Structure as a paramters to a function as call by value
+//NOTE that we cannot send an array as a parameter though as call by Value
+/*#include<stdio.h>
+
+struct ArraySample {
+    int length;
+    int Arr[10];
+};
+
+void SampleArr(struct ArraySample r){
+  r.Arr[0] = 1;
+  r.Arr[1] = 2;
+  printf("length and Array 0th element inside SampleArr %d %d \n", r.length, r.Arr[0]);
+  
+}
+
+int main()
+{
+    struct ArraySample r1;
+    SampleArr(r1);
+    printf("\n length and width inside main %d  %d", r1.length, r1.Arr[0]);
+    return 0;
+}*/
+
+
+//Return Address of Structure
+#include<stdio.h>
+#include<stdlib.h>
+struct Rectangle {
+    int length;
+    int width;
+};
+
+struct Rectangle *fun(){
+    struct Rectangle *r;
+    r = (struct Rectangle *) malloc(sizeof(struct Rectangle));
+    r->length = 10;
+    r->width = 15;
+    return r;
+}
+
+int main()
+{
+    struct Rectangle *r1 = fun();
+    printf("\n length and width inside main %d  %d", r1->length, r1->width);
+    return 0;
+}
